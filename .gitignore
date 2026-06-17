@@ -35,3 +35,7 @@ eclipse-*bin/
 # User-specific .bazelrc
 user.bazelrc
 **/bazel-*
+
+.aspect_rules_js/
+**/node_modules/
+.next/

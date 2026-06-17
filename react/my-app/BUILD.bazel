@@ -1,0 +1,31 @@
+load("@aspect_rules_js//js:defs.bzl", "js_run_devserver")
+load("@npm//react/my-app:next/package_json.bzl", "bin")
+
+# Build the production application optimized artifact
+bin.next(
+    name = "build",
+    srcs = glob([
+        "public/**",
+        "app/**",
+    ]) + [
+        "next.config.mjs",
+        "package.json"
+    ],
+    args = ["build"],
+    chdir = package_name(),
+    out_dirs = [".next"],
+)
+
+# Run the local Next.js development server
+bin.next_binary(
+    name = "dev",
+    args = ["dev"],
+    chdir = package_name(),
+    data = glob([
+        "public/**",
+        "app/**",
+    ]) + [
+        "next.config.mjs",
+        "package.json",
+    ],
+)

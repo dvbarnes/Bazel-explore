@@ -8,4 +8,5 @@ java_binary(
         deps = [
         "@maven//:com_google_code_gson_gson"
     ],
+    main_class = "com.example.ProjectRunner",
 )
