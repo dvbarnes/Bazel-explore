@@ -1,0 +1,16 @@
+# Configure the Maven extension
+
+bazel_dep(name = "rules_java", version = "9.3.0")
+bazel_dep(name = "rules_jvm_external", version = "7.0")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+maven.install(
+    artifacts = [
+        "com.google.code.gson:gson:2.8.9",
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2"
+    ],
+)
+use_repo(maven, "maven")
