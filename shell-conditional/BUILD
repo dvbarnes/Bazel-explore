@@ -32,6 +32,7 @@ config_setting(
     constraint_values = [
         "@platforms//os:linux",
     ],
+    visibility = ["//visibility:private"],
 )
 
 config_setting(
