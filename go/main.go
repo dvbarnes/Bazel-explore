@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "fortune"
+import "go/fortune"
 
 func main() {
     fmt.Println("Hello, Bazel! 💚")
