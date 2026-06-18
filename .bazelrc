@@ -1,18 +1,18 @@
 try-import %workspace%/.bazelrc.user
 # BES is fine globally — just event streaming, not execution
-build --bes_backend=grpcs://remote.buildbuddy.io
-build --bes_results_url=https://app.buildbuddy.io
+build:remote --bes_backend=grpcs://remote.buildbuddy.io
+build:remote --bes_results_url=https://app.buildbuddy.io
 
 # Everything RBE-specific goes under --config=remote
-build --remote_executor=grpcs://remote.buildbuddy.io
+build:remote --remote_executor=grpcs://remote.buildbuddy.io
+build --java_language_version=25 \
+    --tool_java_language_version=25 \
+    --java_runtime_version=remotejdk_25 \
+    --tool_java_runtime_version=remotejdk_25 
+
 build:remote \
     --bes_results_url=https://app.buildbuddy.io/invocation/ \
     --bes_backend=grpcs://remote.buildbuddy.io \
     --remote_executor=grpcs://remote.buildbuddy.io \
     --platforms=@toolchains_buildbuddy//platforms:linux_x86_64 \
-    --extra_execution_platforms=@toolchains_buildbuddy//platforms:linux_x86_64 \
-    --java_language_version=25 \
-    --tool_java_language_version=25 \
-    --java_runtime_version=remotejdk_25 \
-    --tool_java_runtime_version=remotejdk_25 
-
+    --extra_execution_platforms=@toolchains_buildbuddy//platforms:linux_x86_64 

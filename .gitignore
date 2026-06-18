@@ -40,3 +40,4 @@ user.bazelrc
 **/node_modules/
 .bazelrc.user
 .next/
+.aspect/
