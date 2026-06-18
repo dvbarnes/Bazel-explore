@@ -5,6 +5,9 @@ load("@rules_python//python:py_test.bzl", "py_test")
 py_library(
     name = "lib",
     srcs = ["lib.py"],
+    deps = [
+        "@pip//numpy",
+    ],
 )
 
 py_binary(
