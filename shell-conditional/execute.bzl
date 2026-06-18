@@ -12,7 +12,6 @@ def _impl(ctx):
     args = ctx.actions.args()
     args.add(ctx.outputs.out)
     args.add_all(ctx.files.chunks)
-
     # Action to call the script.
     ctx.actions.run(
         inputs = ctx.files.chunks,

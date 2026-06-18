@@ -33,6 +33,7 @@ npm.npm_translate_lock(
     name = "npm",
     pnpm_lock = "//react/my-app:pnpm-lock.yaml"
 )
+
 use_repo(npm, "npm")
 
 pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm", dev_dependency = True)

@@ -1,5 +1,7 @@
 load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
 load(":execute.bzl", "concat")
+load("@rules_shell//shell:sh_test.bzl", "sh_test")
+
 
 concat(
     name = "sh",
@@ -25,6 +27,11 @@ sh_binary(
 sh_binary(
     name = "merge_on_windows.bat",
     srcs = ["merge.bat"],
+)
+
+sh_test(
+    name = "long_running_test",
+    srcs = ["long_test.sh"]
 )
 
 config_setting(
