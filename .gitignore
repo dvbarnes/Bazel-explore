@@ -38,5 +38,5 @@ user.bazelrc
 
 .aspect_rules_js/
 **/node_modules/
-.bazelrc
+.bazelrc.user
 .next/

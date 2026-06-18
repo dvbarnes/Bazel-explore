@@ -27,10 +27,10 @@ jobs:
 
     - name: Test
       run: |
-        "${GITHUB_WORKSPACE}/bin/bazel" test //... --remote_cache=grpcs://remote.buildbuddy.io --remote_header=x-buildbuddy-api-key=${{ secrets.REMOTE_CACHE_AUTH }}
+        "${GITHUB_WORKSPACE}/bin/bazel" test //... --remote_header=x-buildbuddy-api-key=${{ secrets.REMOTE_CACHE_AUTH }} --config=remote
 
 
     - name: Build
       run: |
-        "${GITHUB_WORKSPACE}/bin/bazel" build //... --remote_cache=grpcs://remote.buildbuddy.io --remote_header=x-buildbuddy-api-key=${{ secrets.REMOTE_CACHE_AUTH }}
+        "${GITHUB_WORKSPACE}/bin/bazel" build //... --remote_header=x-buildbuddy-api-key=${{ secrets.REMOTE_CACHE_AUTH }} --config=remote
 
