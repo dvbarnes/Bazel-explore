@@ -12,11 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Mount bazel cache
-      uses: actions/cache@v5
-      with:
-        path: "/home/runner/.cache/bazel"
-        key: bazel
+    # - name: Mount bazel cache
+    #   uses: actions/cache@v5
+    #   with:
+    #     path: "/home/runner/.cache/bazel"
+    #     key: bazel
 
     - name: Install bazelisk
       run: |
@@ -33,4 +33,3 @@ jobs:
       run: |
         "${GITHUB_WORKSPACE}/bin/bazel" build //... --remote_cache=grpcs://remote.buildbuddy.io --remote_header="Authorization=Bearer ${{ secrets.REMOTE_CACHE_AUTH }}"
 
-        
