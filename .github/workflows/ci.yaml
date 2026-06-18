@@ -27,7 +27,7 @@ jobs:
 
     - name: Test
       run: |
-        "${GITHUB_WORKSPACE}/bin/bazel" test //... --remote_cache=grpcs://remote.buildbuddy.io --remote_header="Authorization=Bearer ${{ secrets.REMOTE_CACHE_AUTH }}"
+        "${GITHUB_WORKSPACE}/bin/bazel" test //... --remote_cache=grpcs://remote.buildbuddy.io --remote_header="Authorization=Bearer DKIVTGcpcJE177BFWXp7"
 
     - name: Build
       run: |
