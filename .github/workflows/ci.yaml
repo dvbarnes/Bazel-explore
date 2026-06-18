@@ -32,3 +32,5 @@ jobs:
     - name: Build
       run: |
         "${GITHUB_WORKSPACE}/bin/bazel" build //... --remote_cache=grpcs://remote.buildbuddy.io --remote_header="Authorization=Bearer ${{ secrets.REMOTE_CACHE_AUTH }}"
+
+        
